@@ -42,7 +42,8 @@ class Solution {
         ArrayList<Integer> ans=new ArrayList<>();
         for(int i=0;i<V;i++)
         {
-            if(!vis[i]) dfs(i,adj,vis,ans);
+            if(!vis[i])
+            dfs(i,adj,vis,ans);
         }
         return ans;
     }
@@ -50,12 +51,10 @@ class Solution {
     {
         vis[v]=true;
         ans.add(v);
-        for(Integer n: adj.get(v))
+        for(Integer n:adj.get(v))
         {
             if(!vis[n])
-            {
-                dfs(n,adj,vis,ans);
-            }
+            dfs(n,adj,vis,ans);
         }
     }
 }

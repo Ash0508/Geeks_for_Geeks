@@ -62,5 +62,34 @@ class Solution {
         }
         recS[v]=false;
         return false;
+    
+    // boolean vis[]=new boolean[v];
+    // boolean recS[]=new boolean[v];
+    // for(int i=0;i<v;i++)
+    // {
+    //     if(!vis[i])
+    //     {
+    //         if(dfs(i,adj,vis,recS)) return true;
+    //     }
+    // }
+    // return false;
+    // }
+    
+    // public boolean dfs(int v,ArrayList<ArrayList<Integer>> adj,boolean vis[],boolean recS[])
+    // {
+    //     vis[v]=true;
+    //     recS[v]=true;
+        
+    //     for(Integer n: adj.get(v))
+    //     {
+    //         if(!vis[n])
+    //         {
+    //             if(dfs(n,adj,vis,recS)) return true;
+    //         }
+    //         else if(recS[n]) return true;
+    //         recS[v]=false;
+    //         return false;
+    //     }
+    //   return false;
     }
 }

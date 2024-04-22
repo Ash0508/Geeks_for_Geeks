@@ -34,33 +34,57 @@ class GFG {
 
 class Solution {
     // Function to detect cycle in an undirected graph.
-    public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
+    public boolean isCycle(int v, ArrayList<ArrayList<Integer>> adj) {
         // Code here
-        boolean vis[]=new boolean[V];
-        for(int i=0;i<V;i++)
-        {
-            if(!vis[i])
-            {
-                if(dfs(i,adj,vis,-1)) return true;
-            }
-        }
-        return false;
+    //     boolean vis[]=new boolean[V];
+    //     for(int i=0;i<V;i++)
+    //     {
+    //         if(!vis[i])
+    //         {
+    //             if(dfs(i,adj,vis,-1)) return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+    // public boolean dfs(int v,ArrayList<ArrayList<Integer>> adj,boolean vis[],int p)
+    // {
+    //     vis[v]=true;
+    //     for(int n:adj.get(v))
+    //     {
+    //         if(!vis[n])
+    //         {
+    //             if(dfs(n,adj,vis,v)) return true;
+    //         }
+    //         else if(p!=n) return true;
+    //     }
+    //     return false;
+    
+   boolean vis[]=new boolean[v];
+   for(int i=0;i<v;i++)
+   {
+       if(!vis[i])
+       {
+           if(dfs(i,adj,vis,-1)) return true;
+       }
+   }
+   return false;
+        
     }
     public boolean dfs(int v,ArrayList<ArrayList<Integer>> adj,boolean vis[],int p)
     {
         vis[v]=true;
-        for(Integer n: adj.get(v))
+        for(int n: adj.get(v))
         {
             if(!vis[n])
             {
-                if(dfs(n,adj,vis,v))
-                return true;
+                if(dfs(n,adj,vis,v)) return true;
             }
-            else if(p!=n)
-            {
-                return true;
-            }
+            else if(p!=n) return true;;
         }
         return false;
     }
+   
+    
 }
+
+

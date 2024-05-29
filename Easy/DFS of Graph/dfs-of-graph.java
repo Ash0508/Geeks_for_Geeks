@@ -36,49 +36,24 @@ class GFG {
 
 class Solution {
     // Function to return a list containing the DFS traversal of the graph.
-    public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
+    public ArrayList<Integer> dfsOfGraph(int v, ArrayList<ArrayList<Integer>> a) {
         // Code here
-    //     boolean vis[]=new boolean[V];
-    //     ArrayList<Integer> ans=new ArrayList<>();
-    //     for(int i=0;i<V;i++)
-    //     {
-    //         if(!vis[i])
-    //         dfs(i,adj,vis,ans);
-    //     }
-    //     return ans;
-    // }
-    // public void dfs(int v,ArrayList<ArrayList<Integer>> adj,boolean vis[],ArrayList<Integer> ans)
-    // {
-    //     vis[v]=true;
-    //     ans.add(v);
-    //     for(Integer n:adj.get(v))
-    //     {
-    //         if(!vis[n])
-    //         dfs(n,adj,vis,ans);
-    //     }
-    // }
-    boolean vis[]=new boolean[V];
-    ArrayList<Integer> ans=new ArrayList<>();
+        boolean vis[]=new boolean[v+1];
+        vis[0]=true;
+        ArrayList<Integer> ls=new ArrayList<>();
+        dfs(0,vis,a,ls);
+        return ls;
+        
+    }
     
-    for(int i=0;i<V;i++)
+    public static void dfs(int node,boolean vis[],ArrayList<ArrayList<Integer>> adj,ArrayList<Integer> ls)
     {
-        if(!vis[i])
+        vis[node]=true;
+        ls.add(node);
+        
+        for(Integer it:adj.get(node))
         {
-            dfs(i,adj,vis,ans);
+            if(vis[it]==false) dfs(it,vis,adj,ls);
         }
     }
-    return ans;
-}
-public void dfs(int v,ArrayList<ArrayList<Integer>> adj,boolean vis[],ArrayList<Integer> ans)
-{
-    vis[v]=true;
-    ans.add(v);
-    for(Integer n: adj.get(v))
-    {
-        if(!vis[n])
-        {
-            dfs(n,adj,vis,ans);
-        }
-    }
-}
 }

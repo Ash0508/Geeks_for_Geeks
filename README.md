@@ -73,4 +73,3 @@ Having all your solutions in one place helps you track your progress effectively
 4. Click 'Load Unpacked' and select the extracted folder.
 5. The extension is now ready for local development.
 
-# MIT License

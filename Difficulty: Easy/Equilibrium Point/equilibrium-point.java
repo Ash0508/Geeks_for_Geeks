@@ -41,7 +41,6 @@ class Solution {
     // Function to find equilibrium point in the array.
     public static int equilibriumPoint(long a[]) {
         // Your code here
-    
         long totsum=Arrays.stream(a).sum();
         long left=0;
         
@@ -53,8 +52,5 @@ class Solution {
         }
         
         return -1;
-    
-        
-        
     }
 }

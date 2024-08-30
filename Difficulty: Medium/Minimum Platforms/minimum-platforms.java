@@ -45,25 +45,30 @@ class Solution
 {
     //Function to find the minimum number of platforms required at the
     //railway station such that no train waits.
-    static int findPlatform(int arr[], int dep[], int n)
+    static int findPlatform(int a[], int d[], int n)
     {
         // add your code here
-        Arrays.sort(arr);
-        Arrays.sort(dep);
-        int i=0,j=0;
-        int cnt=0,max=0;
-        while(i<n){
-            if(arr[i]<=dep[j]){
-                cnt++;
+        int i=1,j=0,platmax=1,plat=1;
+        
+        Arrays.sort(a);
+        Arrays.sort(d);
+        
+        while(i<n && j<n)
+        {
+            if(a[i]<=d[j])
+            {
+                plat++;
                 i++;
             }
-            else{
-                cnt--;
+            else if(a[i]>d[j]){
+                plat--;
                 j++;
             }
-            max=Math.max(cnt,max);
+        
+        if(plat>platmax)
+            platmax=plat;
         }
-        return max;
+        return platmax;
     }
     
 }
